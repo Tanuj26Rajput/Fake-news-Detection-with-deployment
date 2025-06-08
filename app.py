@@ -11,7 +11,7 @@ with open("tokenizer.pkl", "rb") as file:
 def predict_fake_news(title, text):
     content = title + " " + text
     sequences = tokenizer.texts_to_sequences([content])
-    padded_sequences = pad_sequences(sequences, maxlen=500, pad_sequences='post', truncating='post')
+    padded_sequences = pad_sequences(sequences, maxlen=500, padding='post', truncating='post')
     prediction = model.predict(padded_sequences)[0][0]
     return "Real News" if prediction > 0.5 else "Fake News"
 
