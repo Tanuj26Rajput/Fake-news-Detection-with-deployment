@@ -3,7 +3,7 @@ import pickle
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import numpy as np
-# Load the pre-trained model and tokenizer
+
 model = load_model("fake_news_classifier_model.h5")
 with open("tokenizer.pkl", "rb") as file:   
     tokenizer = pickle.load(file)
